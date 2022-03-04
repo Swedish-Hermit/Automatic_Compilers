@@ -48,8 +48,7 @@ cd nginx-$NGINX_VER
                 --with-http_random_index_module \
                 --with-http_stub_status_module \
                 --with-http_sub_module \
-                --without-http_rewrite_module \
-                --add-module=./ngx-fancyindex \
+                --add-module=ngx-fancyindex \
                 --without-http_uwsgi_module \
                 --without-http_scgi_module \
                 --without-http_gzip_module \
