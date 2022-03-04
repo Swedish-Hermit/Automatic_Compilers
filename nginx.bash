@@ -31,7 +31,7 @@ tar -xvf $NGINX_VER.tar.gz
 git clone https://github.com/aperezdc/ngx-fancyindex.git /src/ngx-fancyindex
 
 #cd into nginx folder
-cd $NGINX_VER
+cd nginx-$NGINX_VER
 
  ./configure --prefix=/usr/share/nginx \
                 --sbin-path=/usr/sbin/nginx \
