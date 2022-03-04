@@ -32,7 +32,7 @@ git clone https://github.com/aperezdc/ngx-fancyindex.git ./ngx-fancyindex
 
 #cd into nginx folder
 cd nginx
-
+cd nginx-$NGINX_VER
  ./configure --prefix=/usr/share/nginx \
                 --sbin-path=/usr/sbin/nginx \
                 --conf-path=/etc/nginx/nginx.conf \
@@ -48,7 +48,7 @@ cd nginx
                 --with-http_random_index_module \
                 --with-http_stub_status_module \
                 --with-http_sub_module \
-                --add-module=./ngx-fancyindex \
+                --add-module=../ngx-fancyindex \
                 --without-http_uwsgi_module \
                 --without-http_scgi_module \
                 --without-http_gzip_module \
