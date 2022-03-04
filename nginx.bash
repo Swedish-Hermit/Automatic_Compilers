@@ -28,7 +28,7 @@ curl -L -O "http://nginx.org/download/nginx-${NGINX_VER}.tar.gz" && tar xzf "ngi
 tar -xvf $NGINX_VER.tar.gz
 
 #clone fancyindex git repo
-git clone https://github.com/aperezdc/ngx-fancyindex.git /src/ngx-fancyindex
+git clone https://github.com/aperezdc/ngx-fancyindex.git ./ngx-fancyindex
 
 #cd into nginx folder
 cd nginx-$NGINX_VER
@@ -44,12 +44,12 @@ cd nginx-$NGINX_VER
                 --http-proxy-temp-path=/tmp/nginx/proxy \
                 --with-threads \
                 --with-file-aio \
-                --with-pcre-jit \
                 --with-http_addition_module \
                 --with-http_random_index_module \
                 --with-http_stub_status_module \
                 --with-http_sub_module \
-                --add-module=/src/ngx-fancyindex \
+                --without-http_rewrite_module \
+                --add-module=./ngx-fancyindex \
                 --without-http_uwsgi_module \
                 --without-http_scgi_module \
                 --without-http_gzip_module \
