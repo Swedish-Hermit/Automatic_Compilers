@@ -58,3 +58,4 @@ cd nginx-$NGINX_VER
                 --with-ld-opt="-Wl,--gc-sections -s -static -static-libgcc" \
     && make -j"${CORE_COUNT}" \
     && make install
+    rm -vr ./nginx/
