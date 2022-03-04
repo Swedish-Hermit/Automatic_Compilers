@@ -1,6 +1,5 @@
 #!/bin/bash
 DIR1=nginx
-CORE_COUNT=nproc
 # Error if script not executed as root
 # sudo !! # will run last entry in history with sudo
 
@@ -57,5 +56,5 @@ cd nginx-$NGINX_VER
                 --without-poll_module \
                 --with-cc-opt="-O2 -flto -ffunction-sections -fdata-sections -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security" \
                 --with-ld-opt="-Wl,--gc-sections -s -static -static-libgcc" \
-    && make -j"${CORE_COUNT}" \
+    && make -j$nproc \
     && make install
