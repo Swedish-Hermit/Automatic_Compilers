@@ -18,7 +18,6 @@ sudo apt-get update \
         git \
         make \
         tar \
-        upx
 
 ### Look for latest file and download it 
 NGINX_VER="$(curl -s 'http://nginx.org/download/' | grep -oP 'href="nginx-\K[0-9]+\.[0-9]+\.[0-9]+' | sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)"
