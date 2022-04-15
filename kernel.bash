@@ -26,7 +26,7 @@ cp -v /boot/config-$(uname -r) .config
 make menuconfig
 
 ### Compile kernel
-make -j $nproc
+make -j4
 
 ### install modules
 make modules_install
