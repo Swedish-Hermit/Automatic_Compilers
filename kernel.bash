@@ -1,13 +1,13 @@
 #!/bin/bash
+# Error if script not executed as root
+# sudo !! # will run last entry in history with sudo
+[[ "$(id -u)" == 0 ]] || { echo "Run: sudo !!" >&2 ; exit 1 ; }
 # If you pass flag INSTALL then run installation for kernel after compile!
 if ["$INSTALL" == true ] ; then
     echo Installing kernel after compile!
 fi
 # Variable INSTALL
 INSTALL= make modules_install && make install
-# Error if script not executed as root
-# sudo !! # will run last entry in history with sudo
-[[ "$(id -u)" == 0 ]] || { echo "Run: sudo !!" >&2 ; exit 1 ; }
 ### Create directory for the sources
 mkdir kernel
 cd kernel
