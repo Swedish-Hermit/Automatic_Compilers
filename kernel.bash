@@ -24,5 +24,4 @@ cp -v /boot/config-$(uname -r) .config
 make menuconfig
 # Compile kernel
 make -j4
-# Install modules
-$INSTALL
+# Install modules with the flag INSTALL
