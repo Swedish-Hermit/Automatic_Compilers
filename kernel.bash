@@ -1,5 +1,5 @@
 #!/bin/bash
-Dependencies= 'git fakeroot build-essential make ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison curl wget'
+Dependencies='git fakeroot build-essential make ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison curl wget'
 # If you pass flag INSTALL then run installation for kernel after compile!
 if [ "install" == "true" ]; then
     echo 'Installing kernel after compile!'
@@ -21,7 +21,7 @@ if [ "install" == "true" ]; then
     # Make menu config and display it for changes
     make menuconfig
     # Compile kernel and install kernel
-    make -j4 && make modules_install && make install
+    make -j5 && make modules_install && make install
     # Install modules with the flag INSTALL
     exit 0
 else
@@ -36,7 +36,7 @@ else
     tar -xvf latest.tar.gz
     cd ./linux*
     # Compile kernel
-    make -j4
+    make -j6
     # Install modules with the flag INSTALL
     echo Install the modules and kernel with "install"
     exit 0
