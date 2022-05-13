@@ -3,9 +3,8 @@ Dependencies='git build-essential autoconf automake libtool gawk alien fakeroot 
 [[ "$(id -u)" == 0 ]] || { echo "Run: sudo !!" >&2 ; exit 1 ; }
 apt update && apt install $Dependencies
 if [[ -d $HOME/zfs ]]; then
-    cd $HOME
-    echo 'running git pull then compile'
-    cd ./zfs && git pull 
+    cd $HOME/zfs && git pull
+    echo 'running git pull then compile' 
     git checkout master
     sh autogen.sh && ./configure
     make -s -j4
