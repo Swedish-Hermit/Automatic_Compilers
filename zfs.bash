@@ -7,7 +7,7 @@ if [[ -d $HOME/zfs ]]; then
     echo 'running git pull then compile' 
     git checkout master
     sh autogen.sh && ./configure
-    make -s -j4
+    make -s -j6
     echo 'all done!'
     exit 0
   else
@@ -15,7 +15,7 @@ if [[ -d $HOME/zfs ]]; then
     git clone https://github.com/openzfs/zfs
     cd ./zfs && git checkout master
     sh autogen.sh && ./configure
-    make -s -j4
+    make -s -j6
     echo 'all done!'
     exit 0
 fi
