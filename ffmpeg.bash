@@ -1,5 +1,5 @@
 #!/bin/bash
-### Install requierd packages
+### Install required packages
 sudo apt-get update -q && sudo apt-get -y install \
   autoconf \
   automake \
