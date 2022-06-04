@@ -63,10 +63,10 @@ cd nginx-$NGINX_VER
                 --add-module=../ngx-fancyindex \
                 --without-http_uwsgi_module \
                 --without-http_scgi_module \
-                --without-http_gzip_module \
-                --without-select_module \
+                #--without-http_gzip_module \
+             #   --without-select_module \
                 --without-poll_module \
-                --with-cc-opt="-O2 -flto -ffunction-sections -fdata-sections -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security" \
-                --with-ld-opt="-Wl,--gc-sections -s -static -static-libgcc" \
+#                --with-cc-opt="-O2 -flto -ffunction-sections -fdata-sections -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security" \
+#                --with-ld-opt="-Wl,--gc-sections -s -static -static-libgcc" \
     && make -j4 \
     && make install
