@@ -29,8 +29,8 @@ tar -xvf $NGINX_VER.tar.gz
 
 #clone fancyindex git repo
 git clone https://github.com/aperezdc/ngx-fancyindex.git ./ngx-fancyindex
-#wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.gz && tar xvf
-#wget https://www.openssl.org/source/openssl-3.0.3.tar.gz && tar xvf 
+wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.gz && tar xvf
+wget https://www.openssl.org/source/openssl-3.0.3.tar.gz && tar xvf 
 #cd into nginx folder
 cd nginx
 cd nginx-$NGINX_VER
@@ -51,13 +51,13 @@ cd nginx-$NGINX_VER
                 --with-http_sub_module \
                 --with-stream_ssl_module \
                 --with-stream \
-#                --with-openssl=../openssl-3.0.3 \
+                --with-openssl=../openssl-3.0.3 \
                 --with-http_mp4_module \
                 --with-http_sub_module \
                 --with-http_dav_module \
                 --with-http_flv_module \
                 --with-http_ssl_module \
-#                --with-pcre=../pcre2-10.40 \
+                --with-pcre=../pcre2-10.40 \
                 --with-http_gzip_static_module \
                 --without-http_rewrite_module \
                 --add-module=../ngx-fancyindex \
