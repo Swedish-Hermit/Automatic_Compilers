@@ -58,7 +58,7 @@ cd nginx-$NGINX_VER
                 --with-http_flv_module \
                 --with-http_ssl_module \
                 --with-pcre=../pcre2-10.40 \
-                --with-http_gzip_static_module \
+             #   --with-http_gzip_static_module \
                 --without-http_rewrite_module \
                 --add-module=../ngx-fancyindex \
                 --without-http_uwsgi_module \
@@ -68,5 +68,5 @@ cd nginx-$NGINX_VER
                 --without-poll_module \
 #                --with-cc-opt="-O2 -flto -ffunction-sections -fdata-sections -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security" \
 #                --with-ld-opt="-Wl,--gc-sections -s -static -static-libgcc" \
-    && make -j4 \
+    && make -j7 \
     && make install
