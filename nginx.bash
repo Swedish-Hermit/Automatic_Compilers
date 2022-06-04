@@ -56,7 +56,6 @@ cd nginx-$NGINX_VER
                 --with-http_flv_module \
                 --with-http_ssl_module \
                 --with-pcre
-                --without-http_rewrite_module \
                 --add-module=../ngx-fancyindex \
                 --without-http_uwsgi_module \
                 --without-http_scgi_module \
