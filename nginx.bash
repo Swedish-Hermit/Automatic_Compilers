@@ -34,7 +34,7 @@ wget https://www.openssl.org/source/openssl-3.0.3.tar.gz && tar xvf
 #cd into nginx folder
 cd nginx
 cd nginx-$NGINX_VER
- ./configure --prefix=/usr/share/nginx \
+ ./configure --prefix=/usr/share/nginx --add-module=../ngx-fancyindex/ \
                 --sbin-path=/usr/sbin/nginx \
                 --conf-path=/etc/nginx/nginx.conf \
                 --error-log-path=/var/log/nginx/error.log \
@@ -55,14 +55,7 @@ cd nginx-$NGINX_VER
                 --with-http_dav_module \
                 --with-http_flv_module \
                 --with-http_ssl_module \
-                --with-pcre
-                --add-module=../ngx-fancyindex/ \
-                --without-http_uwsgi_module \
-                --without-http_scgi_module \
-                --without-http_gzip_module \
-                --without-select_module \
-                --without-poll_module \
-                --with-cc-opt="-O2 -flto -ffunction-sections -fdata-sections -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security" \
-                --with-ld-opt="-Wl,--gc-sections -s -static -static-libgcc" \
+                --with-pcre \
+                --with-http_realip_module
     && make -j7 \
     && make install
