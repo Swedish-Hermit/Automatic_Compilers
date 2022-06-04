@@ -41,8 +41,6 @@ cd nginx-$NGINX_VER
                 --http-log-path=/var/log/nginx/access.log \
                 --pid-path=/tmp/nginx.pid \
                 --lock-path=/run/lock/subsys/nginx \
-                --http-client-body-temp-path=/tmp/nginx/client \
-                --http-proxy-temp-path=/tmp/nginx/proxy \
                 --with-threads \
                 --with-file-aio \
                 --with-http_addition_module \
@@ -56,6 +54,7 @@ cd nginx-$NGINX_VER
                 --with-http_flv_module \
                 --with-http_ssl_module \
                 --with-pcre \
-                --with-http_realip_module
+                --with-http_realip_module \
+                --with-http_v2_module \
     && make -j7 \
     && make install
