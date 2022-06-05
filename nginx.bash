@@ -56,5 +56,6 @@ cd nginx-$NGINX_VER
                 --with-pcre \
                 --with-http_realip_module \
                 --with-http_v2_module \
+		--with-http_xslt_module \
     && make -j7 \
     && make install
