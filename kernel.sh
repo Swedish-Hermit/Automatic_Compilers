@@ -13,7 +13,7 @@ if [ "install" == "true" ]; then
     apt-get install -y $Dependencies 
     # Look for latest file and download it 
     # wget "$(curl "https://kernel.org" | grep -A3 "<td>mainline:</td>" | grep ".tar.gz" | cut -d\" -f2)" -O latest.tar.gz
-    wget "$(curl "https://kernel.org/" | grep -A3 "<td>mainline:</td>" | grep ".tar.gz" | cut -d\" -f2)" -O latest.tar.gz
+    wget -e robots=off "$(curl "https://kernel.org/" | grep -A3 "<td>mainline:</td>" | grep ".tar.gz" | cut -d\" -f2)" -O latest.tar.gz
     tar -xvf latest.tar.gz
     cd ./linux*
     # Copy existing config over to new kernel
