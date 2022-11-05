@@ -20,5 +20,5 @@ Dependencies='git fakeroot build-essential make ncurses-dev xz-utils libssl-dev 
     # Make menu config and display it for changes
     make menuconfig
     # Compile kernel for distribution
-    make -j $(nproc) bindeb-pkg
+    make -j4 bindeb-pkg
     exit 0
