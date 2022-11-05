@@ -17,6 +17,8 @@ Dependencies='git fakeroot build-essential make ncurses-dev xz-utils libssl-dev 
     cd ./linux*
     # Copy existing config over to new kernel
     cp -v /boot/config-$(uname -r) .config
+    scripts/config --set-str SYSTEM_TRUSTED_KEYS ""
+    scripts/config --set-str CONFIG_SYSTEM_REVOCATION_KEYS ""
     # Make menu config and display it for changes
     make menuconfig
     # Compile kernel for distribution
